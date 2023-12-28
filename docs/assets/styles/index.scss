@@ -1,0 +1,60 @@
+@import "banner-top";
+@import "banner-bottom";
+
+
+:root {
+  --gold: #D7A830;
+  --white: #FFF;
+  --white-transparent: #ffffff1a;
+  --text-dark: #0B0B0B;
+  --text-gray: #6C6C70;
+  --black-background: #0E0E0E;
+}
+
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  @include font();
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.main {
+  height: 250vh;
+}
+
+body, html {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.desktop-hidden {
+  display: none;
+  @include tablet {
+    display: initial;
+  }
+  @include mobile {
+    display: initial;
+  }
+}
+
+.tablet-hidden {
+  @include tablet {
+    display: none;
+  }
+}
+
+.mobile-hidden {
+  @include mobile {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,125 @@
+@import "mixins";
+
+.banner-bottom {
+  --padding: 75px 35px 55px;
+  --banner-right: 1%;
+  --banner-bottom: 2%;
+  --transition-property: right;
+
+  @include mobile {
+    --banner-bottom: 0;
+    --banner-right: 0;
+    --transition-property: bottom;
+
+    width: 100%;
+    border-radius: 0;
+    background-size: cover;
+  }
+
+
+  position: fixed;
+  bottom: var(--banner-bottom);
+  right: var(--banner-right);
+  width: 600px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.45);
+  padding: var(--padding);
+  background-image: url("../../assets/img/bottom-banner-background.png");
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+  transition: var(--transition-property) .4s;
+
+
+
+  &--hidden {
+    --banner-right: -100%;
+
+    @include mobile {
+      --banner-right: 0;
+      --banner-bottom: -100%;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  &__content {
+    padding-left: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @include mobile {
+      padding-left: 0;
+    }
+  }
+
+  &__title {
+    leading-trim: both;
+    text-edge: cap;
+    letter-spacing: -1.84px;
+
+    @include font(
+            $font-size: 46px,
+            $font-weight: 500,
+            $line-height: 119%,
+            $color: var(--white)
+    );
+  }
+
+  &__discount {
+    text-align: center;
+    letter-spacing: -1.6px;
+    background: linear-gradient(to right, #7D5317, #EDDF95);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 25px;
+
+    @include font(
+            $color: rgba(210, 152, 26, 0.60),
+            $font-size: 40px,
+            $font-weight: 500,
+            $line-height: 110%
+    );
+  }
+
+  &__description {
+    letter-spacing: 0.08px;
+    margin-top: 14px;
+
+    @include font(
+            $color: var(--text-gray),
+            $font-weight: 500,
+            $line-height: 130%
+    );
+  }
+
+  &__promo {
+    letter-spacing: 0.08px;
+
+    @include font(
+            $color: var(--gold),
+            $font-weight: 500,
+            $line-height: 130%
+    );
+  }
+
+  &__shop {
+    border-radius: 14px;
+    opacity: 0.9;
+    background: rgba(255, 255, 255, 0.10);
+    padding: 12px 24px;
+    margin-top: 40px;
+    letter-spacing: 0.08px;
+
+    @include font(
+            $font-weight: 500,
+            $line-height: 110%
+    );
+  }
+}

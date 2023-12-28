@@ -1,0 +1,36 @@
+.banner-top {
+  background: linear-gradient(180deg, #101010 0%, #0F0F0F 100%);
+  position: absolute;
+  top: 54px;
+  left: 0;
+  width: 100%;
+  height: 54px;
+  display: grid;
+  grid-template-columns: 220px 1fr 175px;
+  gap: 12px;
+}
+.banner-top__image {
+  height: 100%;
+}
+.banner-top__image img {
+  display: flex;
+  object-fit: contain;
+}
+.banner-top__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
+}
+.banner-top__name {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: var(--white);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.048px;
+}
+
+/*# sourceMappingURL=banner-top.css.map */
